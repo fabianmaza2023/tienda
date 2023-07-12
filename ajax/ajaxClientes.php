@@ -6,10 +6,9 @@ class ajaxClientes{
    public $idClientes;
 
    public function cargarDatos(){
-    $tabla = "cliente";
     $parametro = "cliente";
     $id = $this->idClientes;
-    $datos=controladorclientes::ctrlcargarcliente($tabla,$parametro,$id);
+    $datos=controladorclientes::ctrlcargarcliente($parametro,$id);
     echo json_encode($datos);
    }
 
@@ -20,8 +19,6 @@ if (isset($_POST['idClientes'])){
     $objAjaxClientes->idClientes = $_POST['idClientes'];
     if($_POST['edit'] == 'edit'){
         $objAjaxClientes->cargarDatos();
-    }else{
-        #$objAjaxClientes->eliminarDatos();
     }
 
 }

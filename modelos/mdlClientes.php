@@ -25,8 +25,8 @@ class ModeloCliente{
             return $datos;
 
         }else{
-            $stm = conexion::conectar()->prepare("SELECT * FROM $tabla where id_cliente=:id_cliente");
-            $stm->bindParam('::id_cliente', $id, PDO::PARAM_INT);
+            $stm = conexion::conectar()->prepare("SELECT * FROM $tabla where id_persona=:id_persona");
+            $stm->bindParam(':id_persona', $id, PDO::PARAM_INT);
             $stm->execute();
             $datos =$stm->fetch();
             return $datos;

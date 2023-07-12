@@ -1,12 +1,10 @@
 $(".btnCargarDatos").click(function(){
     var idClientes = $(this).attr("idClientes");
-    
+    console.log ("idClientes", idClientes)
     var datos = new FormData();
-    
-    datos.append("edit", edit);
-    console.log("Datos id",edit);
     datos.append("idClientes", idClientes);
-
+    datos.append("edit", "edit");
+    
     $.ajax({
         url: "ajax/ajaxClientes.php",
         method: "POST",
@@ -16,6 +14,7 @@ $(".btnCargarDatos").click(function(){
         processData: false,
         dataType: "json",
         success: function (respuesta) {
+            console.log("Datos json",respuesta)
             
             
         }
